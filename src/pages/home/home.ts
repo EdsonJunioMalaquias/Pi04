@@ -20,7 +20,7 @@ export class HomePage {
     private firebaseServiceProvider: FirebaseServiceProvider) {
   }
   signIn() {
-    if (this.form.form.valid) {
+    if (this.form.valid) {
       this.firebaseServiceProvider.entrarConta(this.user)
         .then(() => {
           this.navCtrl.setRoot(MainmenuPage);
