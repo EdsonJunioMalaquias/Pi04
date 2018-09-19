@@ -10,10 +10,12 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+
 import { MainmenuPage } from '../pages/mainmenu/mainmenu';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { FirebaseServiceProvider } from '../providers/firebase-service/firebase-service';
+import { PesquisaPage } from '../pages/pesquisa/pesquisa';
+import { ResultadoPage } from '../pages/resultado/resultado';
 
 const firebaseconfig = {
   apiKey: "AIzaSyAWUR924M1DNAATH7VWcu1ykRMp3kWvcvc",
@@ -28,7 +30,8 @@ const firebaseconfig = {
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
+    PesquisaPage,
+    ResultadoPage,
     MainmenuPage,
     CadastroPage
   ],
@@ -42,7 +45,8 @@ const firebaseconfig = {
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
+    PesquisaPage,
+    ResultadoPage,
     MainmenuPage,
     CadastroPage
   ],

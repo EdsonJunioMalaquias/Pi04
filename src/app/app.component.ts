@@ -4,11 +4,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+
 import { MainmenuPage } from '../pages/mainmenu/mainmenu';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { CadastroPage } from '../pages/cadastro/cadastro';
-
+import { FirebaseServiceProvider } from '../providers/firebase-service/firebase-service';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,7 +20,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,afAuth: AngularFireAuth) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,afAuth: AngularFireAuth,private firebaseServiceProvider:FirebaseServiceProvider) {
    const  authObserver =  afAuth.authState.subscribe(user => {
       if (user) {
         this.rootPage = MainmenuPage;
@@ -34,11 +34,10 @@ export class MyApp {
     this.initializeApp();
 
     this.pages = [
-      
-      { title: 'List', component: ListPage },
-      { title: 'MainMenu', component:MainmenuPage},
+      { title: 'Tela Principal', component:MainmenuPage},
+      { title: 'Pesquisa', component:CadastroPage},
       { title: 'Cadastro', component:CadastroPage},
-      { title: 'Home', component: HomePage }
+      { title: 'Sair',component:HomePage  }
       
     ];
 

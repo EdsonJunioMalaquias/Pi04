@@ -20,10 +20,11 @@ export class FirebaseServiceProvider {
     return this.angularFireAuth.auth.signInWithEmailAndPassword(user.email, user.password);
   }
   
-  private sairConta() {
-    return this.angularFireAuth.auth.signOut();
+  public sairConta() {
+    console.log("é deu ");
+     return this.angularFireAuth.auth.signOut(); 
+    
   }
-
   resetarSenha(email: string) {
     return this.angularFireAuth.auth.sendPasswordResetEmail(email);
   }

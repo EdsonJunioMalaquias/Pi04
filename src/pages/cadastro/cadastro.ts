@@ -27,17 +27,17 @@ export class CadastroPage {
   createAccount() {
     if (this.form.valid) {
       let toast = this.toastCtrl.create({ duration: 3000, position: 'bottom' });
-      console.log("Entrouaqui1");
+      
       this.firebaseServiceProvider.criarConta(this.user)
       .then((user: any) => {
           
         toast.setMessage('Usuário cadastrado com sucesso.');
         toast.present();
-        console.log("Entrouaqu3");
+        
         this.navCtrl.setRoot(MainmenuPage);
       })
       .catch((error: any) => {
-        console.log("Entrouaqu2");
+        
         if (error.code  == 'auth/email-already-in-use') {
           toast.setMessage('O e-mail digitado já está em uso.');
         } if (error.code  == 'auth/invalid-email') {

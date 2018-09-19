@@ -18,6 +18,13 @@ export class HomePage {
     public navCtrl: NavController,
     private toastCtrl: ToastController,
     private firebaseServiceProvider: FirebaseServiceProvider) {
+      this.signOut();
+  }
+  public signOut() {
+    this.firebaseServiceProvider.sairConta()
+      .catch((error) => {
+        console.error(error);
+      });
   }
   signIn() {
     if (this.form.valid) {
